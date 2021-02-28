@@ -5,19 +5,17 @@ long_description = open('README.md', 'r').read()
 requirements = list(open('requirements.txt', 'r'))
 
 setuptools.setup(
-    author='Ben Busby',
-    author_email='benbusby@protonmail.com',
-    name='whoogle-search',
+    author='Savin Mario',
+    name='centili-search',
     version='0.3.1',
     include_package_data=True,
     install_requires=requirements,
-    description='Self-hosted, ad-free, privacy-respecting metasearch engine',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    url='https://github.com/benbusby/whoogle-search',
+    url='https://github.com/benbusby/centili-search',
     entry_points={
         'console_scripts': [
-            'whoogle-search=app.routes:run_app',
+            'centili-search=app.routes:run_app',
         ]
     },
     packages=setuptools.find_packages(),

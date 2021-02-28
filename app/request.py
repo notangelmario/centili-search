@@ -134,8 +134,8 @@ class Request:
 
     Attributes:
         normal_ua -- the user's current user agent
-        root_path -- the root path of the whoogle instance
-        config -- the user's current whoogle configuration
+        root_path -- the root path of the centili instance
+        config -- the user's current centili configuration
     """
 
     def __init__(self, normal_ua, root_path, config: Config):
@@ -148,14 +148,14 @@ class Request:
         self.modified_user_agent = gen_user_agent(self.mobile)
 
         # Set up proxy, if previously configured
-        if os.environ.get('WHOOGLE_PROXY_LOC'):
+        if os.environ.get('CENTILI_PROXY_LOC'):
             auth_str = ''
-            if os.environ.get('WHOOGLE_PROXY_USER'):
-                auth_str = os.environ.get('WHOOGLE_PROXY_USER') + \
-                           ':' + os.environ.get('WHOOGLE_PROXY_PASS')
+            if os.environ.get('CENTILI_PROXY_USER'):
+                auth_str = os.environ.get('CENTILI_PROXY_USER') + \
+                           ':' + os.environ.get('CENTILI_PROXY_PASS')
             self.proxies = {
-                'http': os.environ.get('WHOOGLE_PROXY_TYPE') + '://' +
-                auth_str + '@' + os.environ.get('WHOOGLE_PROXY_LOC'),
+                'http': os.environ.get('CENTILI_PROXY_TYPE') + '://' +
+                auth_str + '@' + os.environ.get('CENTILI_PROXY_LOC'),
             }
             self.proxies['https'] = self.proxies['http'].replace('http',
                                                                  'https')

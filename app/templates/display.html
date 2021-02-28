@@ -2,7 +2,7 @@
     <head>
         <link rel="shortcut icon" href="static/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="static/img/favicon.ico" type="image/x-icon">
-        <link rel="search" href="opensearch.xml" type="application/opensearchdescription+xml" title="Whoogle Search">
+        <link rel="search" href="opensearch.xml" type="application/opensearchdescription+xml" title="ntili Search">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="referrer" content="no-referrer">
         <link rel="stylesheet" href="static/css/{{ 'search-dark' if dark_mode else 'search' }}.css">
@@ -10,7 +10,7 @@
         {% if dark_mode %}
             <link rel="stylesheet" href="static/css/dark-theme.css"/>
         {% endif %}
-        <title>{{ query }} - Whoogle Search</title>
+        <title>{{ query }} - Centili Search</title>
     </head>
     <body>
     {{ search_header|safe }}
@@ -18,8 +18,8 @@
     </body>
     <footer>
         <p style="color: {{ '#fff' if dark_mode else '#000' }};">
-            Whoogle Search v{{ version_number }} ||
-            <a style="color: #685e79" href="https://github.com/benbusby/whoogle-search">View on GitHub</a>
+            Made with <span role="img" aria-label="heart">❤️</span> by
+            <a style="color: #685e79" href="https://angelmario.eu/">Savin Angel Mario</a>
         </p>
     </footer>
 	<script src="static/js/autocomplete.js"></script>

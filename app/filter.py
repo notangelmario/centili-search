@@ -133,7 +133,7 @@ class Filter:
             src = 'https:' + src
 
         if src.startswith(LOGO_URL):
-            # Re-brand with Whoogle logo
+            # Re-brand with Centili logo
             element['src'] = 'static/img/logo.png'
             element['style'] = 'height:40px;width:162px'
             return

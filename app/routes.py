@@ -29,12 +29,12 @@ def auth_required(f):
         auth = request.authorization
 
         # Skip if username/password not set
-        whoogle_user = os.getenv('WHOOGLE_USER', '')
-        whoogle_pass = os.getenv('WHOOGLE_PASS', '')
-        if (not whoogle_user or not whoogle_pass) or (
+        centili_user = os.getenv('CENTILI_USER', '')
+        centili_pass = os.getenv('CENTILI_PASS', '')
+        if (not centili_user or not centili_pass) or (
                 auth
-                and whoogle_user == auth.username
-                and whoogle_pass == auth.password):
+                and centili_user == auth.username
+                and centili_pass == auth.password):
             return f(*args, **kwargs)
         else:
             return make_response('Not logged in', 401, {
@@ -337,7 +337,7 @@ def window():
 
 def run_app():
     parser = argparse.ArgumentParser(
-        description='Whoogle Search console runner')
+        description='Centili Search console runner')
     parser.add_argument(
         '--port',
         default=5000,
@@ -382,16 +382,16 @@ def run_app():
 
     if args.userpass:
         user_pass = args.userpass.split(':')
-        os.environ['WHOOGLE_USER'] = user_pass[0]
-        os.environ['WHOOGLE_PASS'] = user_pass[1]
+        os.environ['CENTILI_USER'] = user_pass[0]
+        os.environ['CENTILI_PASS'] = user_pass[1]
 
     if args.proxytype and args.proxyloc:
         if args.proxyauth:
             proxy_user_pass = args.proxyauth.split(':')
-            os.environ['WHOOGLE_PROXY_USER'] = proxy_user_pass[0]
-            os.environ['WHOOGLE_PROXY_PASS'] = proxy_user_pass[1]
-        os.environ['WHOOGLE_PROXY_TYPE'] = args.proxytype
-        os.environ['WHOOGLE_PROXY_LOC'] = args.proxyloc
+            os.environ['CENTILI_PROXY_USER'] = proxy_user_pass[0]
+            os.environ['CENTILI_PROXY_PASS'] = proxy_user_pass[1]
+        os.environ['CENTILI_PROXY_TYPE'] = args.proxytype
+        os.environ['CENTILI_PROXY_LOC'] = args.proxyloc
 
     os.environ['HTTPS_ONLY'] = '1' if args.https_only else ''
 

@@ -24,35 +24,35 @@ VOLUME $config_dir
 ENV CONFIG_VOLUME=$config_dir
 
 ARG username=''
-ENV WHOOGLE_USER=$username
+ENV CENTILI_USER=$username
 ARG password=''
-ENV WHOOGLE_PASS=$password
+ENV CENTILI_PASS=$password
 
 ARG proxyuser=''
-ENV WHOOGLE_PROXY_USER=$proxyuser
+ENV CENTILI_PROXY_USER=$proxyuser
 ARG proxypass=''
-ENV WHOOGLE_PROXY_PASS=$proxypass
+ENV CENTILI_PROXY_PASS=$proxypass
 ARG proxytype=''
-ENV WHOOGLE_PROXY_TYPE=$proxytype
+ENV CENTILI_PROXY_TYPE=$proxytype
 ARG proxyloc=''
-ENV WHOOGLE_PROXY_LOC=$proxyloc
+ENV CENTILI_PROXY_LOC=$proxyloc
 
 ARG use_https=''
 ENV HTTPS_ONLY=$use_https
 
-ARG whoogle_port=5000
-ENV EXPOSE_PORT=$whoogle_port
+ARG centili_port=5000
+ENV EXPOSE_PORT=$centili_port
 
 ARG twitter_alt='nitter.net'
-ENV WHOOGLE_ALT_TW=$twitter_alt
+ENV CENTILI_ALT_TW=$twitter_alt
 ARG youtube_alt='invidious.snopyta.org'
-ENV WHOOGLE_ALT_YT=$youtube_alt
+ENV CENTILI_ALT_YT=$youtube_alt
 ARG instagram_alt='bibliogram.art/u'
-ENV WHOOGLE_ALT_YT=$instagram_alt
+ENV CENTILI_ALT_YT=$instagram_alt
 ARG reddit_alt='libredd.it'
-ENV WHOOGLE_ALT_RD=$reddit_alt
+ENV CENTILI_ALT_RD=$reddit_alt
 
-WORKDIR /whoogle
+WORKDIR /CENTILI
 
 COPY --from=builder /install /usr/local
 COPY config/tor/torrc /etc/tor/torrc

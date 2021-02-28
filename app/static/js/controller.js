@@ -1,9 +1,9 @@
-// Whoogle configurations that use boolean values and checkboxes
+// Centili configurations that use boolean values and checkboxes
 CONFIG_BOOLS = [
     "nojs", "dark", "safe", "alts", "new_tab", "get_only", "tor"
 ];
 
-// Whoogle configurations that use string values and input fields
+// Centili configurations that use string values and input fields
 CONFIG_STRS = [
     "near", "url"
 ];
@@ -34,7 +34,7 @@ const fillConfigValues = () => {
     xhrGET.open("GET", "config");
     xhrGET.onload = function() {
         if (xhrGET.readyState === 4 && xhrGET.status !== 200) {
-            alert("Error loading Whoogle config");
+            alert("Error loading Centili config");
             return;
         }
 
@@ -56,7 +56,7 @@ const fillConfigValues = () => {
 };
 
 const setupConfigLayout = () => {
-    // Setup whoogle config
+    // Setup centili config
     const collapsible = document.getElementById("config-collapsible");
     collapsible.addEventListener("click", function() {
         this.classList.toggle("active");
@@ -85,7 +85,7 @@ const loadConfig = event => {
     xhrPUT.open("PUT", "config?name=" + config + ".conf");
     xhrPUT.onload = function() {
         if (xhrPUT.readyState === 4 && xhrPUT.status !== 200) {
-            alert("Error loading Whoogle config");
+            alert("Error loading centili config");
             return;
         }
 
