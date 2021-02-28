@@ -19,7 +19,7 @@ def test_feeling_lucky(client):
 
 
 def test_ddg_bang(client):
-    rv = client.get('/search?q=!gh%centili')
+    rv = client.get('/search?q=!gh%20centili')
     assert rv._status_code == 302
     assert rv.headers.get('Location').startswith('https://github.com')
 

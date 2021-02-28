@@ -16,7 +16,7 @@ mkdir -p "$STATIC_FOLDER"
 
 # Check for regular vs test run
 if [[ "$SUBDIR" == "test" ]]; then
-    pytest -sv
+    python3 -m pytest -sv
 else
     python3 -um app \
       --host "${ADDRESS:-0.0.0.0}" \
