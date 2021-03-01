@@ -23,6 +23,8 @@ RUN mkdir -p $config_dir
 VOLUME $config_dir
 ENV CONFIG_VOLUME=$config_dir
 
+ARG use_https=1
+
 ARG username=''
 ENV CENTILI_USER=$username
 ARG password=''
@@ -37,7 +39,6 @@ ENV CENTILI_PROXY_TYPE=$proxytype
 ARG proxyloc=''
 ENV CENTILI_PROXY_LOC=$proxyloc
 
-ARG use_https=''
 ENV HTTPS_ONLY=$use_https
 
 ARG centili_port=5000
