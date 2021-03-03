@@ -20,5 +20,6 @@ if [[ "$SUBDIR" == "test" ]]; then
 else
     python3 -um app \
       --host "${ADDRESS:-0.0.0.0}" \
-      --port "${PORT:-"${EXPOSE_PORT:-5000}"}"
+      --port "${PORT:-"${EXPOSE_PORT:-5000}"}" \
+      --https-only
 fi
