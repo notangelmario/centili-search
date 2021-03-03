@@ -28,9 +28,7 @@ app.config['STATIC_FOLDER'] = os.getenv(
 app.config['CONFIG_PATH'] = os.getenv(
     'CONFIG_VOLUME',
     os.path.join(app.config['STATIC_FOLDER'], 'config'))
-app.config['DEFAULT_CONFIG'] = os.path.join(
-    app.config['CONFIG_PATH'],
-    'config.json')
+app.config['DEFAULT_CONFIG'] = os.getenv('DEFAULT_CONFIG')
 app.config['SESSION_FILE_DIR'] = os.path.join(
     app.config['CONFIG_PATH'],
     'session')
