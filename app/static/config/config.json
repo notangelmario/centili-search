@@ -1,0 +1,15 @@
+{
+    "url": "https://centili.herokuapp.com/", 
+    "lang_search": "", 
+    "lang_interface": "", 
+    "ctry": "", 
+    "safe": false, 
+    "dark": true,
+    "nojs": false, 
+    "tor": false, 
+    "near": "", 
+    "alts": false, 
+    "new_tab": false, 
+    "get_only": false, 
+    "safe_keys": ["lang_search", "lang_interface", "ctry", "dark"]
+}

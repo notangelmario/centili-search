@@ -4,10 +4,10 @@ __pycache__/
 *.pyc
 *.pem
 *.conf
-config.json
+# config.json
 test/static
 flask_session/
-app/static/config
+app/static/config/session/
 app/static/custom_config
 app/static/bangs
 
